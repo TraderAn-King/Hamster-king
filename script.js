@@ -51,7 +51,7 @@ document.addEventListener('DOMContentLoaded', () => {
             appToken: '04ebd6de-69b7-43d1-9c4b-04a6ca3305af',
             promoId: '04ebd6de-69b7-43d1-9c4b-04a6ca3305af',
         },
-        10: {
+        11: {
             name: 'All keys',
             appToken: '82647f43-3f87-402d-88dd-09a90025313f',
             promoId: 'c4480ac7-e178-4973-8061-9ed5b2e17954',
