@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>KeyGen Hamster</title>
+    <title>DiamondGenHamster</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -252,7 +252,7 @@
 <body>
     <div class="container">
         <div class="form-container">
-            <h2>Hamster PlayGround Keys</h2>
+            <h2>Hamster PlayGround Diamond</h2>
             <br>
             <label for="appSelect">Select application:</label>
             <select id="appSelect" onchange="updateConstants()">
@@ -273,9 +273,9 @@
                 <option value="Infected">Infected Frontier</option>
                 <option value="Water">Among Water</option>
                 <option value="factory">Factory World</option>
-                <option value="All">All Games Keys</option>
+                <option value="All">All Games Diamond</option>
             </select>
-            <label id="keyCountLabel" for="keyCount">Number of Keys:</label>
+            <label id="keyCountLabel" for="keyCount">Number of Diamond codes:</label>
             <select id="keyCount">
                 <option value="1">1</option>
                 <option value="2">2</option>
@@ -288,7 +288,7 @@
                 <option value="9">9</option>
                 <option value="10">10</option>
             </select>
-            <button onclick="generateKeys()">Generate Keys</button>
+            <button onclick="generateKeys()">Generate Diamond</button>
         </div>
 
         <div class="form-container">
@@ -300,17 +300,17 @@
             </div>
             <br>
             <div id="keyContainer">
-            <h2 class="gentext">Generated Keys</h2>
+            <h2 class="gentext">Generated Diamond</h2>
             <!-- Generated keys will be placed here -->
             </div>
             <div id="copyDeleteButton" style="display: none; justify-content: center; margin-top: 10px;">
-                <button id="copyButton" class="buttoon" onclick="copyAllKeys()">Copy All Keys</button>
+                <button id="copyButton" class="buttoon" onclick="copyAllKeys()">Copy All</button>
             </div>
             <br>
             <button style="width: 97%; height: 60px; font-size: 20px; font-weight: 500; box-shadow: 0 0 6px rgba(0, 0, 0, 0.2); background-color: #fff; color: #333; margin:5px; padding: 15px 15px; border-radius: 5px; cursor: none;" onclick="this.style.backgroundColor = '#ddd'; setTimeout(function(){ this.style.backgroundColor = '#fff'; }.bind(this), 500); location.href='https://t.me/HamsterkombCombo'">Join Airdrop Channel</button>
             <div style="display: flex; justify-content: center; margin-top: 0px;">
                 <button style="height: 60px;font-size: 18px; font-weight: 500; box-shadow: 0 0 6px rgba(0, 0, 0, 0.2); background-color: #fff; color: #333; margin:5px; padding: 15px 15px; border-radius: 5px; cursor: none;" onclick="this.style.backgroundColor = '#ddd'; setTimeout(function(){ this.style.backgroundColor = '#fff'; }.bind(this), 500); location.href='https://t.me/Ronix_tech'">Owner Channel</button>
-                <button style="height: 60px;font-size: 18px; font-weight: 500; box-shadow: 0 0 6px rgba(0, 0, 0, 0.2); background-color: #fff; color: #333; margin:5px; padding: 15px 15px; border-radius: 5px; cursor: none;" onclick="this.style.backgroundColor = '#ddd'; setTimeout(function(){ this.style.backgroundColor = '#fff'; }.bind(this), 500); location.href='https://t.me/Ronix_tech/73?single'">How to use ?</button>
+                <button style="height: 60px;font-size: 18px; font-weight: 500; box-shadow: 0 0 6px rgba(0, 0, 0, 0.2); background-color: #fff; color: #333; margin:5px; padding: 15px 15px; border-radius: 5px; cursor: none;" onclick="this.style.backgroundColor = '#ddd'; setTimeout(function(){ this.style.backgroundColor = '#fff'; }.bind(this), 500); location.href='https://t.me/Ronix_tech/131?single'">How to use ?</button>
             </div>
         </div>
         <a href="https://t.me/Tapswap_Strbot" class="ad-container">
@@ -487,7 +487,7 @@
                         return data.clientToken;
                     } else if (data.error_code && counts < 1) {
                         counts ++;
-                        appendToDisplay('\nYour ip has been blocked\nGeneration of keys may take more than excepted time');
+                        appendToDisplay('\nYour ip has been blocked\nGeneration of Diamond may take more than excepted time');
                         await sleep(120000);
                     } else if (data.error_code) {
                         await sleep(120000);
@@ -541,7 +541,7 @@
                 const data = await response.json();
                 return data.promoCode;
             } catch (error) {
-                console.error('Error generating key:', error);
+                console.error('Error generating Diamond:', error);
                 return null;
             }
         }
@@ -551,7 +551,7 @@
             const clientToken = await login(appToken, clientId);
 
             if (!clientToken) {
-                console.log('Login failed. Skipping key generation.');
+                console.log('Login failed. Skipping Diamond generation.');
                 return null;
             }
 
@@ -588,20 +588,20 @@
             if (validKeys.length > 0) {
                 if (selectedApp === "All" && allKeys.length === 52) {
                         updateLoadingBar(100);
-                        appendToDisplay("\nAll Keys Generated, Thanks for using");
+                        appendToDisplay("\nAll Diamond Generated, Thanks for using");
                         copyDeleteButton.style.display = 'flex';
                         localStorage.setItem('generatedKeys', JSON.stringify(allKeys));
                  } else if (selectedApp !== "All" && allKeys.length === parseInt(document.getElementById('keyCount').value) ) {
                         updateLoadingBar(100);
-                        appendToDisplay("\nAll Keys Generated, Thanks for using");
+                        appendToDisplay("\nAll Diamond Generated, Thanks for using");
                         copyDeleteButton.style.display = 'flex';
                         localStorage.setItem('generatedKeys', JSON.stringify(allKeys));
                     }
             } else {
-                appendToDisplay(`\nError: Failed to generate ${appName} keys!\nPlease try again later.`);
+                appendToDisplay(`\nError: Failed to generate ${appName} Diamond!\nPlease try again later.`);
 
             }
-            return validKeys; // Return the valid keys
+            return validKeys; // Return the valid Diamond
         }
 
         function appendToDisplay(text) {
@@ -627,7 +627,7 @@
                 keyText.style.width = 'calc(72% - 22px)'; // Adjust for copy button width
 
                 const copyButton = document.createElement('div');
-                copyButton.textContent = 'Copy Key';
+                copyButton.textContent = 'Copy !';
                 copyButton.style.display = 'inline-flex';
                 copyButton.style.padding = '10px 10px';
                 copyButton.style.backgroundColor = '#09A629';
@@ -643,7 +643,7 @@
                             copyButton.textContent = 'Copied !';
                             copyButton.style.backgroundColor = "#128028";
                             setTimeout(() => {
-                                copyButton.textContent = 'Copy Key';
+                                copyButton.textContent = 'Copy';
                                 copyButton.style.backgroundColor = "#09A629";
                             }, 1500); // Change back after 1 second
                         })
@@ -685,7 +685,7 @@
             clearInterval(intervalId2);
             loadingBarFill.style.width = '0%'; // Reset loading bar
             if (selectedApp === "All") {
-                appendToDisplay('Please wait, Generating All Games keys');
+                appendToDisplay('Please wait, Generating All Games Diamond');
                 appendToDisplay('Expected time 10 minutes')
                 const appNames = Object.keys(appConfigs); // Get app names from the config
                 let currentAppIndex = 0; // Start with the first app
@@ -715,7 +715,7 @@
             } else {
                 NUM_KEYS_TO_GENERATE = parseInt(document.getElementById('keyCount').value); // Get selected key count
                 console.log(NUM_KEYS_TO_GENERATE)
-                appendToDisplay(`Please wait, Generating ${selectedApp} Keys...`);
+                appendToDisplay(`Please wait, Generating ${selectedApp} Diamond ...`);
                 const genTime = appConfigs[selectedApp].gentime
                 appendToDisplay(`Expected time ${genTime} minutes`)
                 await findValidKeys(appConfigs[selectedApp].appToken, appConfigs[selectedApp].promoId, NUM_KEYS_TO_GENERATE, selectedApp);
@@ -749,7 +749,7 @@
                 copyButton.textContent = 'Copied!';
                 copyButton.style.backgroundColor = "#128028";
              setTimeout(() => {
-                copyButton.textContent = 'Copy All Keys';
+                copyButton.textContent = 'Copy All';
                 copyButton.style.backgroundColor = "#09A629";
              }, 2000); 
             })
@@ -757,7 +757,7 @@
               copyButton.textContent = 'Failed!';
               copyButton.style.backgroundColor = "red";
              setTimeout(() => {
-                copyButton.textContent = 'Copy All Keys';
+                copyButton.textContent = 'Copy All';
                 copyButton.style.backgroundColor = "#09A629";
              }, 2000); 
             });
